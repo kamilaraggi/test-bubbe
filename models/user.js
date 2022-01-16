@@ -31,7 +31,7 @@ User.init(
     type: DataTypes.STRING,
     allowNull:false
    },
-   senha:{
+   password:{
     type: DataTypes.STRING,
     allowNull:false,
     validate: {
