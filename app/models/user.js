@@ -19,11 +19,11 @@ User.init(
      autoIncrement:true,
      allowNull:false
    },
-   nome:{
+   firstname:{
      type: DataTypes.STRING,
      allowNull:false
    },
-   sobrenome:{
+   lastname:{
     type: DataTypes.STRING,
     allowNull:false
    },
@@ -38,25 +38,22 @@ User.init(
       len: [4]
     }
    },
+  
    salt:{
     type: DataTypes.STRING,
     allowNull:false
    },
-   datacriacao:{
-    type: DataTypes.DATE,
-    allowNull:false
-   }
   },
   {
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        
         return newUserData;
       },
 
       async beforeUpdate(updatedUserData) {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+       
         return updatedUserData;
       }
     },

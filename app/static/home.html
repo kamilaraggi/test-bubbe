@@ -1,0 +1,26 @@
+<div class="col-md-12" style="width:500px;">
+    <div align="right"><a ui-sref="login">Logout</a></div>
+
+      <h4>Welcome {{user.username}}! </h4>
+
+      <p><strong>Home Page</strong></p>
+
+      <form ng-submit="usernameUp()" class="form">
+      <div class="form-group" >
+        <input type="text" class="form-control" ng-model="username" placeholder="New Username"/>
+      <button type="submit" value="save" class="btn btn-success">Update Username</button>
+      <span class="text-success" style="color:green">{{ success }}</span>
+      </div>
+      </form>
+
+      <form ng-submit="passwordUp()" class="form">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="password" placeholder="New Password"/> 
+      <button type="submit" class="btn btn-success">Update Password</button>
+      <span class="text-success" style="color:green">{{ password_success }}</span>
+      </div>
+      </form>
+
+    <button ng-click="deleteBtn()" type="button" style="color:red" class="">Delete User</button>
+    <span class="text-danger" style="color:red">{{ delete_error }}</span>
+    </div>
